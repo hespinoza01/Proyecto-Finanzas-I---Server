@@ -1,0 +1,15 @@
+/home/hespinoza/Documentos/NET Core/Financecalc-Server/obj/Debug/netcoreapp2.1/Financecalc-Server.csprojAssemblyReference.cache
+/home/hespinoza/Documentos/NET Core/Financecalc-Server/obj/Debug/netcoreapp2.1/Financecalc-Server.csproj.CoreCompileInputs.cache
+/home/hespinoza/Documentos/NET Core/Financecalc-Server/obj/Debug/netcoreapp2.1/Financecalc-Server.RazorAssemblyInfo.cache
+/home/hespinoza/Documentos/NET Core/Financecalc-Server/obj/Debug/netcoreapp2.1/Financecalc-Server.RazorAssemblyInfo.cs
+/home/hespinoza/Documentos/NET Core/Financecalc-Server/obj/Debug/netcoreapp2.1/Financecalc-Server.AssemblyInfoInputs.cache
+/home/hespinoza/Documentos/NET Core/Financecalc-Server/obj/Debug/netcoreapp2.1/Financecalc-Server.AssemblyInfo.cs
+/home/hespinoza/Documentos/NET Core/Financecalc-Server/bin/Debug/netcoreapp2.1/Financecalc-Server.dll.config
+/home/hespinoza/Documentos/NET Core/Financecalc-Server/bin/Debug/netcoreapp2.1/Financecalc-Server.deps.json
+/home/hespinoza/Documentos/NET Core/Financecalc-Server/bin/Debug/netcoreapp2.1/Financecalc-Server.runtimeconfig.json
+/home/hespinoza/Documentos/NET Core/Financecalc-Server/bin/Debug/netcoreapp2.1/Financecalc-Server.runtimeconfig.dev.json
+/home/hespinoza/Documentos/NET Core/Financecalc-Server/bin/Debug/netcoreapp2.1/Financecalc-Server.dll
+/home/hespinoza/Documentos/NET Core/Financecalc-Server/bin/Debug/netcoreapp2.1/Financecalc-Server.pdb
+/home/hespinoza/Documentos/NET Core/Financecalc-Server/obj/Debug/netcoreapp2.1/Financecalc-Server.RazorTargetAssemblyInfo.cache
+/home/hespinoza/Documentos/NET Core/Financecalc-Server/obj/Debug/netcoreapp2.1/Financecalc-Server.dll
+/home/hespinoza/Documentos/NET Core/Financecalc-Server/obj/Debug/netcoreapp2.1/Financecalc-Server.pdb
