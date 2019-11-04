@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace ProyectoFinanzasServer.Migrations
+namespace PFinancecalc_Server.Migrations
 {
     public partial class initial : Migration
     {

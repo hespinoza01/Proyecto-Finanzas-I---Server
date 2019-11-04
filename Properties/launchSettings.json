@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "ProyectoFinanzas_Server": {
+    "Financecalc_Server": {
       "commandName": "Project",
       "launchBrowser": false,
       "launchUrl": "",

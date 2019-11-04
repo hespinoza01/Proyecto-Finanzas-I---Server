@@ -1,4 +1,4 @@
-namespace ProyectoFinanzas_Server.Models
+namespace Financecalc_Server.Models
 {
     public class Clasificacion
     {

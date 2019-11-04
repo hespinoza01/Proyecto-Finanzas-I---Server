@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace ProyectoFinanzas_Server
+namespace Financecalc_Server
 {
     public class Program
     {

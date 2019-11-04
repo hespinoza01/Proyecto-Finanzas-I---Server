@@ -11,9 +11,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using ProyectoFinanzas_Server.Models;
+using Financecalc_Server.Models;
 
-namespace ProyectoFinanzas_Server
+namespace Financecalc_Server
 {
     public class Startup
     {
@@ -27,7 +27,7 @@ namespace ProyectoFinanzas_Server
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ProyectoFinanzasDBContext>(
+            services.AddDbContext<FinancecalcDBContext>(
                 options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"))
                 );
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

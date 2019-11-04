@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace ProyectoFinanzas_Server.Controllers
+namespace Financecalc_Server.Controllers
 {
     [Route("")]
     [ApiController]
     public class Home : ControllerBase
     {
-     
+
         [HttpGet]
         public ActionResult<string> Get()
         {

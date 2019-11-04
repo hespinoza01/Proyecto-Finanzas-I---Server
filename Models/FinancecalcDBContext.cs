@@ -1,10 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace ProyectoFinanzas_Server.Models
+namespace Financecalc_Server.Models
 {
-    public class ProyectoFinanzasDBContext : DbContext
+    public class FinancecalcDBContext : DbContext
     {
-        public ProyectoFinanzasDBContext(DbContextOptions<ProyectoFinanzasDBContext> options) : base(options)
+        public FinancecalcDBContext(DbContextOptions<FinancecalcDBContext> options) : base(options)
         {
         }
 
