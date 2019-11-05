@@ -2,15 +2,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Financecalc_Server.Controllers
 {
-    [Route("api")]
+    [Route("api/cuenta")]
     [ApiController]
-    public class Home : ControllerBase
+    public class CuentaControler : ControllerBase
     {
-
         [HttpGet]
         public ActionResult<string> Get()
         {
-            return "Connected";
+            return "Connected to '/cuentas'";
         }
     }
 }
