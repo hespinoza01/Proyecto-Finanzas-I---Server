@@ -32,7 +32,7 @@ namespace Financecalc_Server.Utils
         {
             if (this.context.Subclasificacion.Count() == 0)
             {
-                this.context.Subclasificacion.AddRange(DbData.getSubclasificacionData());
+                this.context.Subclasificacion.AddRange(DbData.getSubclasificacionData(this.context));
                 this.context.SaveChanges();
             }
 
