@@ -14,17 +14,28 @@ namespace Financecalc_Server.Utils
         {
             IServiceScope scope = serviceProvider.GetService<IServiceScopeFactory>().CreateScope();
 
-            context = scope.ServiceProvider.GetService<FinancecalcDBContext>();
+            this.context = scope.ServiceProvider.GetService<FinancecalcDBContext>();
 
         }
 
         public InitValues ClasificacionValues()
         {
-            if (context.Clasificacion.Count() == 0)
+            if (this.context.Clasificacion.Count() == 0)
             {
-                context.Clasificacion.AddRange(DbData.getClasificacionData());
-                context.SaveChanges();
+                this.context.Clasificacion.AddRange(DbData.getClasificacionData());
+                this.context.SaveChanges();
             }
+            return this;
+        }
+
+        public InitValues SubclasificacionValues()
+        {
+            if (this.context.Subclasificacion.Count() == 0)
+            {
+                this.context.Subclasificacion.AddRange(DbData.getSubclasificacionData());
+                this.context.SaveChanges();
+            }
+
             return this;
         }
     }

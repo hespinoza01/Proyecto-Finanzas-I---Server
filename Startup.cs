@@ -42,8 +42,10 @@ namespace Financecalc_Server
             //app.UseHttpsRedirection();
             app.UseMvc();
 
-            //
-            new InitValues(app.ApplicationServices).ClasificacionValues();
+            // Initialization of tables values
+            new InitValues(app.ApplicationServices)
+                .ClasificacionValues()
+                .SubclasificacionValues();
         }
     }
 }
