@@ -13,7 +13,7 @@ namespace Financecalc_Server
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            this.Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
@@ -22,7 +22,7 @@ namespace Financecalc_Server
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<FinancecalcDBContext>(
-                options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"))
+                options => options.UseNpgsql(this.Configuration.GetConnectionString("DefaultConnection"))
                 );
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

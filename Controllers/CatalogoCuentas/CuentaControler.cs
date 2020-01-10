@@ -1,16 +1,13 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Financecalc_Server.Controllers
+namespace Financecalc_Server.Controllers.Catalogo
 {
-    [Route("api/cuenta")]
+    [Route("api/catalogo/cuenta")]
     [ApiController]
     public class CuentaControler : ControllerBase
     {
         [HttpGet]
-        public ActionResult<string> Get()
-        {
-            return "Connected to '/cuentas'";
-        }
+        public ActionResult<string> Get() => "Connected to '/catalogo/cuenta'";
     }
 }
