@@ -14,36 +14,37 @@ namespace Financecalc_Server.Controllers.Catalogo
     {
         private FinancecalcDBContext context;
 
+        // controller constructor
         public ClasificacionController(FinancecalcDBContext context) => this.context = context;
 
+        // getting all clasifications from database
         [HttpGet]
-        public ActionResult<IEnumerable<Clasificacion>> Get() => this.context.Clasificacion.ToArray();
+        public IActionResult Get() => Ok(this.context.Clasificacion);
 
+        // Creating new clasification using post method
         [HttpPost("nuevo")]
-        public ActionResult<_Response> New([FromBody] Clasificacion item)
+        public ActionResult New([FromBody] Clasificacion item)
         {
             this.context.Clasificacion.Add(item);
             this.context.SaveChanges();
-            return ResponseType.Success();
+            return Ok();
         }
 
         [HttpGet("{id}")]
-        public ActionResult<List<Subclasificacion>> GetItem(int id) => this.context.Clasificacion.Find(id).Subclasifications;
+        public ActionResult GetItem(int id) => this.Ok(this.context.Clasificacion.Find(id));
 
         [HttpPost("{id}")]
-        public ActionResult<_Response> UpdateItem(int id, [FromBody] Clasificacion item)
+        public ActionResult UpdateItem(int id, [FromBody] Clasificacion item)
         {
             if (id != item.Id)
             {
-                return ResponseType.Error(
-                    ResMsg: "Error al guardar. Los identificadores no coinciden."
-                    );
+                this.BadRequest();
             }
 
             this.context.Clasificacion.Update(item);
             this.context.SaveChanges();
 
-            return ResponseType.Success();
+            return Ok();
         }
     }
 }
