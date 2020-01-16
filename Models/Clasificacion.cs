@@ -7,6 +7,6 @@ namespace Financecalc_Server.Models
 
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<Subclasificacion> Subclasifications { get; set; }
+        public ICollection<Subclasificacion> Subclasification { get; set; }
     }
 }

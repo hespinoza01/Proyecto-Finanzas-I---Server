@@ -8,6 +8,6 @@ namespace Financecalc_Server.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public Clasificacion Clasification { get; set; }
-        public List<Cuenta> Cuentas { get; set; }
+        public ICollection<Cuenta> Cuentas { get; set; }
     }
 }
