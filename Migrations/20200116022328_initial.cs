@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FinancecalcServer.Migrations
 {
@@ -11,32 +11,32 @@ namespace FinancecalcServer.Migrations
                 name: "Clasificacion",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                    ClasificacionId = table.Column<Guid>(nullable: false),
+                    Code = table.Column<int>(nullable: false),
                     Name = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Clasificacion", x => x.Id);
+                    table.PrimaryKey("PK_Clasificacion", x => x.ClasificacionId);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Subclasificacion",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                    SubclasificacionId = table.Column<Guid>(nullable: false),
+                    Code = table.Column<int>(nullable: false),
                     Name = table.Column<string>(nullable: true),
-                    ClasificationId = table.Column<int>(nullable: true)
+                    ClasificacionId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Subclasificacion", x => x.Id);
+                    table.PrimaryKey("PK_Subclasificacion", x => x.SubclasificacionId);
                     table.ForeignKey(
-                        name: "FK_Subclasificacion_Clasificacion_ClasificationId",
-                        column: x => x.ClasificationId,
+                        name: "FK_Subclasificacion_Clasificacion_ClasificacionId",
+                        column: x => x.ClasificacionId,
                         principalTable: "Clasificacion",
-                        principalColumn: "Id",
+                        principalColumn: "ClasificacionId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -44,31 +44,32 @@ namespace FinancecalcServer.Migrations
                 name: "Cuenta",
                 columns: table => new
                 {
-                    Id = table.Column<string>(nullable: false),
+                    CuentaId = table.Column<Guid>(nullable: false),
+                    Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
-                    SubclasificationId = table.Column<int>(nullable: true),
+                    SubclasificacionId = table.Column<Guid>(nullable: true),
                     Document = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Cuenta", x => x.Id);
+                    table.PrimaryKey("PK_Cuenta", x => x.CuentaId);
                     table.ForeignKey(
-                        name: "FK_Cuenta_Subclasificacion_SubclasificationId",
-                        column: x => x.SubclasificationId,
+                        name: "FK_Cuenta_Subclasificacion_SubclasificacionId",
+                        column: x => x.SubclasificacionId,
                         principalTable: "Subclasificacion",
-                        principalColumn: "Id",
+                        principalColumn: "SubclasificacionId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Cuenta_SubclasificationId",
+                name: "IX_Cuenta_SubclasificacionId",
                 table: "Cuenta",
-                column: "SubclasificationId");
+                column: "SubclasificacionId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Subclasificacion_ClasificationId",
+                name: "IX_Subclasificacion_ClasificacionId",
                 table: "Subclasificacion",
-                column: "ClasificationId");
+                column: "ClasificacionId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -21,8 +21,11 @@ namespace FinancecalcServer.Migrations
 
             modelBuilder.Entity("Financecalc_Server.Models.Clasificacion", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("ClasificacionId");
+
+                    b.Property<int>("Code");
 
                     b.Property<string>("Name");
 
@@ -33,34 +36,40 @@ namespace FinancecalcServer.Migrations
 
             modelBuilder.Entity("Financecalc_Server.Models.Cuenta", b =>
                 {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("CuentaId");
+
+                    b.Property<string>("Code");
 
                     b.Property<string>("Document");
 
                     b.Property<string>("Name");
 
-                    b.Property<int?>("SubclasificationId");
+                    b.Property<Guid?>("SubclasificacionId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("SubclasificationId");
+                    b.HasIndex("SubclasificacionId");
 
                     b.ToTable("Cuenta");
                 });
 
             modelBuilder.Entity("Financecalc_Server.Models.Subclasificacion", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("SubclasificacionId");
 
-                    b.Property<int?>("ClasificationId");
+                    b.Property<Guid?>("ClasificacionId");
+
+                    b.Property<int>("Code");
 
                     b.Property<string>("Name");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ClasificationId");
+                    b.HasIndex("ClasificacionId");
 
                     b.ToTable("Subclasificacion");
                 });
@@ -69,14 +78,14 @@ namespace FinancecalcServer.Migrations
                 {
                     b.HasOne("Financecalc_Server.Models.Subclasificacion", "Subclasification")
                         .WithMany("Cuentas")
-                        .HasForeignKey("SubclasificationId");
+                        .HasForeignKey("SubclasificacionId");
                 });
 
             modelBuilder.Entity("Financecalc_Server.Models.Subclasificacion", b =>
                 {
                     b.HasOne("Financecalc_Server.Models.Clasificacion", "Clasification")
                         .WithMany("Subclasifications")
-                        .HasForeignKey("ClasificationId");
+                        .HasForeignKey("ClasificacionId");
                 });
 #pragma warning restore 612, 618
         }
