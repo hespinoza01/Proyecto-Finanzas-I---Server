@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,10 +29,10 @@ namespace Financecalc_Server.Controllers.Catalogo
         }
 
         [HttpGet("{id}")]
-        public ActionResult GetItem(int id) => this.Ok(this.context.Subclasificacion.Find(id));
+        public ActionResult GetItem(Guid id) => this.Ok(this.context.Subclasificacion.Find(id));
 
         [HttpPost("{id}")]
-        public ActionResult UpdateItem(int id, [FromBody] Subclasificacion item)
+        public ActionResult UpdateItem(Guid id, [FromBody] Subclasificacion item)
         {
             if (id != item.Id)
             {

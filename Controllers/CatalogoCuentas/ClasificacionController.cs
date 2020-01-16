@@ -31,10 +31,10 @@ namespace Financecalc_Server.Controllers.Catalogo
         }
 
         [HttpGet("{id}")]
-        public ActionResult GetItem(int id) => this.Ok(this.context.Clasificacion.Find(id));
+        public ActionResult GetItem(Guid id) => this.Ok(this.context.Clasificacion.Find(id));
 
         [HttpPost("{id}")]
-        public ActionResult UpdateItem(int id, [FromBody] Clasificacion item)
+        public ActionResult UpdateItem(Guid id, [FromBody] Clasificacion item)
         {
             if (id != item.Id)
             {
