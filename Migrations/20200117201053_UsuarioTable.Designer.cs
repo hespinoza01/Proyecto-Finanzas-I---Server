@@ -3,15 +3,17 @@ using System;
 using Financecalc_Server.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace FinancecalcServer.Migrations
 {
     [DbContext(typeof(FinancecalcDBContext))]
-    partial class FinancecalcDBContextModelSnapshot : ModelSnapshot
+    [Migration("20200117201053_UsuarioTable")]
+    partial class UsuarioTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
