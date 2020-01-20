@@ -11,5 +11,6 @@ namespace Financecalc_Server.Models
         public virtual DbSet<Clasificacion> Clasificacion { get; set; }
         public virtual DbSet<Subclasificacion> Subclasificacion { get; set; }
         public virtual DbSet<Cuenta> Cuenta { get; set; }
+        public virtual DbSet<Usuario> Usuario { get; set; }
     }
 }
