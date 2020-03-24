@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/hespinoza/Documentos/NET Core/Financecalc-Server/Financecalc-Server.csproj": {}
+    "/home/hespinoza/Documents/NET Core/Financecalc-Server/Financecalc-Server.csproj": {}
   },
   "projects": {
-    "/home/hespinoza/Documentos/NET Core/Financecalc-Server/Financecalc-Server.csproj": {
+    "/home/hespinoza/Documents/NET Core/Financecalc-Server/Financecalc-Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/hespinoza/Documentos/NET Core/Financecalc-Server/Financecalc-Server.csproj",
+        "projectUniqueName": "/home/hespinoza/Documents/NET Core/Financecalc-Server/Financecalc-Server.csproj",
         "projectName": "Financecalc-Server",
-        "projectPath": "/home/hespinoza/Documentos/NET Core/Financecalc-Server/Financecalc-Server.csproj",
+        "projectPath": "/home/hespinoza/Documents/NET Core/Financecalc-Server/Financecalc-Server.csproj",
         "packagesPath": "/home/hespinoza/.nuget/packages/",
-        "outputPath": "/home/hespinoza/Documentos/NET Core/Financecalc-Server/obj/",
+        "outputPath": "/home/hespinoza/Documents/NET Core/Financecalc-Server/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/share/dotnet/sdk/NuGetFallbackFolder"

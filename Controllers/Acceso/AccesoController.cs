@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Financecalc_Server.Models;
 using Financecalc_Server.Utils;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Financecalc_Server.Controllers.Acceso
@@ -56,10 +57,13 @@ namespace Financecalc_Server.Controllers.Acceso
 
             if (result.Count > 0)
             {
-                return this.Ok(result.First());
+                UserToken _user = new UserToken(result.First());
+
+                return this.Ok(_user);
             }
 
             return this.BadRequest();
         }
+
     }
 }

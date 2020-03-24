@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Financecalc_Server.Models;
 
 namespace Financecalc_Server.Controllers
 {
@@ -8,9 +9,9 @@ namespace Financecalc_Server.Controllers
     {
 
         [HttpGet]
-        public ActionResult<string> Get()
+        public ActionResult<string> Get([FromBody] Clasificacion res)
         {
-            return "Connected";
+            return res.Name;
         }
     }
 }
